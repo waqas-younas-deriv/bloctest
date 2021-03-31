@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "724515050388",
+    "project_id": "bloctest-c2f40",
+    "storage_bucket": "bloctest-c2f40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724515050388:android:aa89f694813fa40ad3b581",
+        "android_client_info": {
+          "package_name": "com.viro.bloc_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "724515050388-ve1l3sqf65ipin8kkvdk9ndt7ad4fsui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhXcdOfH-qMFWQL5Yaf_MY_BhFGfzX-0M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "724515050388-ve1l3sqf65ipin8kkvdk9ndt7ad4fsui.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
