@@ -1,7 +1,6 @@
-import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'core/cubit/signup_cubit.dart';
 
 class SignupPage extends StatelessWidget {
@@ -52,10 +51,7 @@ class SignupPage extends StatelessWidget {
                         field: 'Name',
                         hint: 'Please enter your Name',
                         validator: (val) {
-                          if (val.isEmpty || val == null) {
-                            return 'Please enter your name';
-                          }
-                          return null;
+                          return  context.read<SignupCubit>().validateName(val);
                         },
                         onSaved: (val) {
                           context.read<SignupCubit>().name(val);
@@ -66,11 +62,7 @@ class SignupPage extends StatelessWidget {
                         field: 'Email',
                         hint: 'Please enter your Email',
                         validator: (val) {
-
-                          if (val.isEmpty || val == null|| !EmailValidator.validate(val) ) {
-                            return 'Please enter your Email';
-                          }
-                          return null;
+                        return  context.read<SignupCubit>().validateEmail(val);
                         },
                         onSaved: (val) {
                           context.read<SignupCubit>().email(val);
@@ -81,17 +73,12 @@ class SignupPage extends StatelessWidget {
                         field: 'Password',
                         hint: 'Please enter your Password',
                         validator: (val) {
-                          if (val.isEmpty || val == null||confirmPassword!=password) {
-                            return 'Please enter your password';
-                          }else{
-                            context.read<SignupCubit>().password(val);
-                            return null;
-                          }
-
+                          return context
+                              .read<SignupCubit>()
+                              .validatePassword(val,confirmPassword);
                         },
                         onSaved: (val) {
-                          password=val;
-
+                          password = val;
                         },
                         obscure: true),
                     formField(
@@ -99,15 +86,13 @@ class SignupPage extends StatelessWidget {
                         field: 'Confirm Password',
                         hint: 'Please re-enter your password',
                         validator: (val) {
-
-                          if (val.isEmpty || val == null || confirmPassword!=password) {
-                            return 'Please enter your password';
-                          }
-                          return null;
+                        return context
+                              .read<SignupCubit>()
+                              .validatePassword(val,password);
                         },
                         onSaved: (val) {
-                          confirmPassword=val;
-                          },
+                          confirmPassword = val;
+                        },
                         obscure: true),
                     InkWell(
                       onTap: () async {
