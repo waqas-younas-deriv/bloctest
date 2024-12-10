@@ -7,6 +7,14 @@ const activityFeed = [
   {
     id: 1000,
     title: 'New Photo Uploaded',
+
+
+
+
+    body: 'Alice uploaded a new photo to her album.',
+    body1: 'Alice uploaded a new photo to her album.',
+    body: 'Alice uploaded a new photo to her album.',
+    body: 'Alice uploaded a new photo to her album.',
     body: 'Alice uploaded a new photo to her album.'
   },
   {
